@@ -23,6 +23,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.app-subtitle {
+  text-align: center;
+  margin: 50px auto;
+  font-weight: 300;
+}
 
 .App-link {
   color: #61dafb;
