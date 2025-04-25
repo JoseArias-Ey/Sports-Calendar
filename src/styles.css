@@ -9,7 +9,7 @@
   body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-color: #121212;
+    background-color: lab(37.91% 0.4 0.14);
   }
   
   .container {
@@ -155,7 +155,7 @@
   
   .logo {
     width: 100%;
-    max-width: 920px;
+    max-width: 300px;
     margin: 0 auto;
     display: block;
   }
