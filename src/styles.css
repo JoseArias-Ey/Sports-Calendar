@@ -155,7 +155,7 @@
   
   .logo {
     width: 100%;
-    max-width: 200px;
+    max-width: 920px;
     margin: 0 auto;
     display: block;
   }
@@ -163,7 +163,7 @@
   .app-subtitle {
     text-align: center;
     margin: 25px auto;
-    font-weight: 600;
+    font-weight: 300;
   }
   
   nav {
@@ -249,4 +249,5 @@
   input:checked + .slider {
     background-color: #FFA100;
   }
+  
   
