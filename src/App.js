@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import './styles.css'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Form from './components/Form';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import TotalCompleteItems from "./components/TotalCompleteItems";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-
-      <div className='container'>
-        <Header></Header>
-        <Form></Form>
-      </div>
-        
-        
+    <div className="container">
+      <Header></Header>
+      <AddTodoForm />
+      <TodoList />
+      <TotalCompleteItems />
       <Footer></Footer>
-      
     </div>
   );
-}
+};
 
 export default App;
