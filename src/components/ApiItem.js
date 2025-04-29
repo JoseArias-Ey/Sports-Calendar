@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { toggleComplete } from "../redux/todoSlice";
-import { deleteTodo } from "../redux/todoSlice";
+import { toggleComplete } from "../redux/apiSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import { Stack } from "@fluentui/react";
+import { deleteApi } from "../redux/apiSlice";
 
-const TodoItem = ({ id, title, completed }) => {
+const ApiItem = ({ id, title, completed }) => {
   const dispatch = useDispatch();
 
   const handleComplete = () => {
@@ -14,7 +14,7 @@ const TodoItem = ({ id, title, completed }) => {
   };
 
   const handleDelete = () => {
-    dispatch(deleteTodo({ id: id }));
+    dispatch(deleteApi({ id: id }));
   };
   return (
     <li className={`list-group-item ${completed && "list-group-item-success"}`}>
@@ -27,7 +27,7 @@ const TodoItem = ({ id, title, completed }) => {
           ></input>
           {title}
         </span>
-        <Stack spacing={8}>
+        <Stack direction="row" spacing={8}>
           <Button
             onClick={handleDelete}
             className="btn btn-danger"
@@ -43,4 +43,4 @@ const TodoItem = ({ id, title, completed }) => {
   );
 };
 
-export default TodoItem;
+export default ApiItem;

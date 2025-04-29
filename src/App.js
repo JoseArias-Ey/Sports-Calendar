@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList";
 import TotalCompleteItems from "./components/TotalCompleteItems";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Posts from "./components/Posts";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Header></Header>
       <AddTodoForm />
       <TodoList />
+      <Posts />
       <TotalCompleteItems />
       <Footer></Footer>
     </div>

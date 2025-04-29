@@ -9,7 +9,7 @@
   body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-color:  #0e5ec7;
+    background-color:  #1e1bc0;
   }
   
   .container {
@@ -61,7 +61,7 @@
   /* Footer Styles */
   .footer {
     margin-top: 100px;
-    background-color: #0e5ec7;
+    background-color: #7f8081;
     padding: 1rem;
     text-align: center;
   }
