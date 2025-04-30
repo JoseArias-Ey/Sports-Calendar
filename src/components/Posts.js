@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getPosts, deletePost } from "../services/postService";
+import { getPosts, deletePost, getTodos } from "../services/postService";
 
 import ApiItem from "./ApiItem";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ export default function Posts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts()
+    getTodos()
       .then((result) => {
         setPosts(result.data);
       })
@@ -21,11 +21,7 @@ export default function Posts() {
   return (
     <u1 clasName="list-group">
       {posts.map((posts) => (
-        <ApiItem
-          id={posts.id}
-          title={posts.title}
-          completed={posts.completed}
-        />
+        <ApiItem id={posts.id} title={posts.title} />
       ))}
     </u1>
   );

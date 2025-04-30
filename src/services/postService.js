@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com",
 });
 
-const getPosts = () => api.get("/todos");
-const deletePost = (id) => api.delete("./posts/${id}");
+const getTodos = () => api.get("/todos");
 
-export { getPosts, deletePost };
+export { getTodos };

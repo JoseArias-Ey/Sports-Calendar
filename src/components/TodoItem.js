@@ -22,12 +22,13 @@ const TodoItem = ({ id, title, completed }) => {
         <span className="d-flex align-items-center">
           <input
             type="checkbox"
+            className="mr-3"
             checked={completed}
             onChange={handleComplete}
           ></input>
           {title}
         </span>
-        <Stack spacing={8}>
+        <Stack direction="row" spacing={2}>
           <Button
             onClick={handleDelete}
             className="btn btn-danger"

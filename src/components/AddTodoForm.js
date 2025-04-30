@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/todoSlice";
 import { Stack } from "@fluentui/react";
-import { Text, Icon } from "@fluentui/react";
+import { Text, Icon, useBoolean, stackTokens, Toggle } from "@fluentui/react";
+import { TextField } from "@mui/material";
 
 const AddTodoForm = () => {
   const [value, setValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [characterError, setCharacterError] = useState("");
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
@@ -18,56 +20,35 @@ const AddTodoForm = () => {
     );
   };
 
-  const validation = (value) => {
-    const x = "Value must be Marko";
-    const y = "Put five characters";
-    const errors = [];
-    if (value !== "Marko" && value.length !== 5) {
-      errors.push(x, y);
-    } else if (value !== "Marko" && value.length === 5) {
-      errors.push(x);
-    } else if (value === "Marko" && value.length !== 5) {
-      errors.push(y);
+  useEffect(() => {
+    if (value.length <= 5) {
+      setErrorMessage("Enter at least 5 characters");
     }
-    return errors;
-  };
+  }, [value]);
 
-  const validateInput = (value) => {
-    <Stack>
-      {validation(value).map((x, i) => (
-        <Stack key={i} verticalAlign="center" horizontal>
-          <Icon iconName="Error" />
-          <Text variant="smallPlus">{x}</Text>
-        </Stack>
-      ))}
-    </Stack>;
-  };
-
-  const handleSubmit = () => {
-    validateInput(value);
-    if (errorMessage) {
-      alert("Event Added correctly");
+  useEffect(() => {
+    if (value.length >= 5 && errorMessage) {
+      setErrorMessage("");
     }
-  };
+  }, [value, errorMessage]);
 
   return (
-    <form onSubmit={onSubmit} class="mt-3 mb-3 needs-validation" noValidate>
-      <div class="col-md-4"></div>
-      <label>Event</label>
-      <input
+    <form>
+      <TextField
+        id="outlined-error"
+        error={value.length <= 5}
+        helperText={errorMessage}
+        className="form-control mb-6 sm-2"
         type="text"
-        class="form-control mb-2 mr-sm-2"
-        id="validation01"
-        placeholder="Enter your upcoming event..."
-        value={value}
         onChange={(event) => setValue(event.target.value)}
-        errorMessage={validateInput}
-      ></input>
-
+        placeholder="Enter your event..."
+        value={value}
+      ></TextField>
       <button
         type="submit"
-        className="btn btn-primary mb-2"
-        onClick={handleSubmit}
+        disabled={value.length <= 4}
+        className="btn btn-primary mb-1"
+        onClick={onSubmit}
       >
         Add
       </button>

@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
+import { getTodos } from "../services/postService";
 
 const todoSlice = createSlice({
   name: "todos",
@@ -26,21 +27,28 @@ const todoSlice = createSlice({
   ],
   reducers: {
     addTodo: (state, action) => {
-      const newPost = {
-        id: Date.now(),
+      const todo = {
+        id: nanoid(),
         title: action.payload.title,
-        compleated: false,
+        completed: false,
       };
-      state.push(newPost);
+      state.push(todo);
     },
     toggleComplete: (state, action) => {
-      const index = state.findIndex((post) => post.id === action.payload.id);
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
       state[index].completed = action.payload.completed;
     },
     deleteTodo: (state, action) => {
-      return state.filter((post) => post.id !== action.payload.id);
+      return state.filter((todo) => todo.id !== action.payload.id);
     },
-    editTodo: (state, action) => {},
+    getTodos: (state, action) => {
+      const todo = {
+        id: getTodos().id,
+        title: getTodos().title,
+        completed: getTodos().completed,
+      };
+      state.push(todo);
+    },
   },
 });
 

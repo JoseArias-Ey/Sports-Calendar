@@ -1,41 +1,27 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { toggleComplete } from "../redux/apiSlice";
-import DeleteIcon from "@mui/icons-material/Delete";
+
 import Button from "@mui/material/Button";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import { Stack } from "@fluentui/react";
-import { deleteApi } from "../redux/apiSlice";
+import { TextView } from "@fluentui/react";
 
 const ApiItem = ({ id, title, completed }) => {
   const dispatch = useDispatch();
 
-  const handleComplete = () => {
-    dispatch(toggleComplete({ id: id, completed: !completed }));
-  };
-
-  const handleDelete = () => {
-    dispatch(deleteApi({ id: id }));
-  };
   return (
-    <li className={`list-group-item ${completed && "list-group-item-success"}`}>
+    <li className={`list-group-item ${completed && "list-group-item"}`}>
       <div className="d-flex justify-content-between">
         <span className="d-flex align-items-center">
-          <input
-            type="checkbox"
-            checked={completed}
-            onChange={handleComplete}
-          ></input>
-          {title}
+          <div class="ms-grid-row ms-sm6 ms-md ms-lg10">{title}</div>
         </span>
-        <Stack direction="row" spacing={8}>
+        <Stack spacing={8}>
           <Button
-            onClick={handleDelete}
-            className="btn btn-danger"
-            color="error"
+            color="success"
             variant="contained"
-            startIcon={<DeleteIcon />}
+            startIcon={<TaskAltIcon />}
           >
-            Delete
+            Completed
           </Button>
         </Stack>
       </div>

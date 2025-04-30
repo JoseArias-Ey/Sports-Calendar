@@ -6,6 +6,7 @@ import TotalCompleteItems from "./components/TotalCompleteItems";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Posts from "./components/Posts";
+import PreviousCompleted from "./components/PreviousCompleted";
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Header></Header>
       <AddTodoForm />
       <TodoList />
-      <Posts />
       <TotalCompleteItems />
+      <PreviousCompleted></PreviousCompleted>
+      <Posts></Posts>
       <Footer></Footer>
     </div>
   );
