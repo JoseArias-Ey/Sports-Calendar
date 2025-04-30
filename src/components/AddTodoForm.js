@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/todoSlice";
-import { Stack } from "@fluentui/react";
-import { Text, Icon, useBoolean, stackTokens, Toggle } from "@fluentui/react";
 import { TextField } from "@mui/material";
 
 const AddTodoForm = () => {
   const [value, setValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [characterError, setCharacterError] = useState("");
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
