@@ -141,6 +141,10 @@
     width: 0;
     height: 0;
   }
+  .spacer{
+    margin-top: 50px;
+    color: green;
+  }
   
   .slider {
     position: absolute;
