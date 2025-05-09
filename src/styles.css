@@ -4,18 +4,25 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .loginBox {
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  padding: 150px;
+  background-color: white;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+}
   
   /* Typography */
   body {
     font-family: 'Roboto', sans-serif;
-    color: #fff;
-    background-color:  #1e1bc0;
+    color: black;
+    background-color:  #4c91ad;
   }
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   
   /* Header Styles */
   .header {
@@ -24,8 +31,10 @@
     
   }
   .container{
-    background-color: rgb(2, 19, 19);
+    background-color: #d1ce8d;
     margin-top: 50;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .search-input {
