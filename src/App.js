@@ -39,7 +39,7 @@ const WrappedView = () => {
       console.log("ID Token:", activeAccount.idToken);
       const decodedToken = jwtDecode(activeAccount.idToken);
       console.log("Decoded Token:", decodedToken);
-      if (decodedToken.roles[0] === "user.admin") {
+      if (decodedToken.roles[0] === "admin") {
         return true;
       }
       if (decodedToken.roles[0] === "user.read") {
