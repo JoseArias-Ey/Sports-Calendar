@@ -14,6 +14,8 @@ export default function Posts() {
         console.error(err);
       });
   });
+  var result = getTodos();
+  console.log(result);
 
   return (
     <u1 clasName="list-group">

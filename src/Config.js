@@ -5,7 +5,7 @@ export const config = {
     clientId: "7712b17d-0d21-42fe-bcd0-953e857e7339",
     authority:
       "https://login.microsoftonline.com/06ce5419-127c-4e75-807f-1cdbadd6e556",
-    redirectUri: "http://localhost:3000",
+    redirectUri: "https://blue-grass-022eb1610.6.azurestaticapps.net",
     navigateToLoginRequesUrl: false,
   },
   cache: {
